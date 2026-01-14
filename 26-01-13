@@ -35,5 +35,3 @@
         - N : 전체 데이터 포인트의 개수
         - u_i, v_i: 실제 2D 이미지상의 점의 좌표 (예: 픽셀 좌표의 (x, y) 중 x, y에 해당)
         - hat{u}_i, hat{v}_i : 카메라 캘리브레이션 모델을 통해 추정된 2D 이미지상의 점의 좌표 (예: 추정된 픽셀 좌표의 (x', y'))
-
-    - [https://www.notion.so/Camera-Network-Calibration-2e7e5ab1122c8044b685f0cbd8b23f58](https://www.notion.so/Camera-Network-Calibration-2e7e5ab1122c8044b685f0cbd8b23f58?pvs=21)
