@@ -1,0 +1,36 @@
+- **Camera Network Calibration**
+    - 용어
+        - Camera Calibration (카메라 캘리브레이션) : 도시 환경에서 CCTV 카메라의 내부·외부 파라미터를 추정하는 과정.
+        - Camera Network (카메라 네트워크) : 서로 시야가 겹치지 않을 수 있는 다수의 CCTV 카메라 집합.
+        - Camera Model (카메라 모델) : 3차원 점을 2차원 이미지로 투영하는 수학적 모델.
+        - Projection Model (투영 모델) : 카메라 모델의 수학적 투영 형태.
+        - Intrinsic Parameters (내부 파라미터) : 카메라의 광학적 특성을 나타내는 파라미터.
+        - Extrinsic Parameters (외부 파라미터) : 카메라의 공간상 위치와 방향을 나타내는 파라미터.
+        - Focal Length (초점거리) : 투영 스케일을 결정하는 내부 파라미터.
+        - Distortion Model (왜곡 모델) : 렌즈로 인한 이미지 왜곡을 표현하는 모델.
+        - Field-of-View Distortion Model (시야각 왜곡 모델) : 광각 또는 어안 렌즈의 비선형 왜곡을 표현하는 모델.
+        - Brown–Conrady Model (브라운–콘라디 모델) : 방사·접선 왜곡을 다항식으로 표현한 전통적 왜곡 모델.
+        - Absolute Coordinates (절대 좌표) : 지도 좌표계를 기준으로 한 실제 3차원 위치.
+        - Terrain Model (지형 모델) : 도로 마커가 위치한 지면의 형태를 표현한 모델.
+        - Reprojection Error (재투영 오차) : 예측된 2D 점과 실제 2D 점의 거리 오차.
+        - Root Mean Square Error, RMSE (평균제곱근오차) : 재투영 오차를 하나의 값으로 요약한 정확도 지표.
+        - Training RMSE (훈련 RMSE) : 모델 학습에 사용된 데이터에서의 평균 오차.
+        - Validation RMSE (검증 RMSE) : 보지 않은 데이터에서의 평균 오차.
+        - Overfitting Score (과적합 점수) : 훈련 오차와 검증 오차 차이로 측정한 과적합 지표.
+        - Model Selection Score (모델 선택 점수) : 오차와 과적합을 종합해 모델을 평가한 점수.
+        - Cross-Validation (교차 검증) : 데이터를 나누어 모델의 일반화 성능을 평가하는 방법.
+        - Bundle Adjustment (번들 조정) : 카메라와 기준점 파라미터를 동시에 최적화하는 과정.
+        - Ground Truth (그라운드 트루스) : 실험에서 정답으로 사용되는 실제 파라미터 값.
+        - Undistorted Image (왜곡 보정 이미지) : 렌즈 왜곡이 제거된 캘리브레이션 결과 이미지
+    - RMSE의 의미 : RMSE는 측정값 또는 예측값과 실제 값 사이의 오차(차이)들의 제곱 평균의 제곱근을 나타냅니다.
+    - 이는 전반적인 오차의 크기와 표준 편차를 보여주는 지표로 사용됩니다.
+    - RMSE 수식 :
+        
+        $$
+         RSME = \sqrt{\frac{\sum_{i=1}^{N}\left\| u_{i}-\hat{u_{i}}\right\|^{2}+\left\|v_{i}-\hat{v_{i}} \right\|^{2}}{N}}
+        $$
+        
+        - N : 전체 데이터 포인트의 개수
+        - u_i, v_i: 실제 2D 이미지상의 점의 좌표 (예: 픽셀 좌표의 (x, y) 중 x, y에 해당)
+        - hat{u}_i, hat{v}_i : 카메라 캘리브레이션 모델을 통해 추정된 2D 이미지상의 점의 좌표 (예: 추정된 픽셀 좌표의 (x', y'))
+    - [https://www.notion.so/Camera-Network-Calibration-2e7e5ab1122c8044b685f0cbd8b23f58](https://www.notion.so/Camera-Network-Calibration-2e7e5ab1122c8044b685f0cbd8b23f58?pvs=21)
