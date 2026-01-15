@@ -13,10 +13,7 @@
         - RSME가 낮을수록 오차의 분포가 더 균일함을 의미
         - 카메라 모델 : PP,PF,PE,EP,EF,S…
         - XYZ : 3차원 자유 변수, X̄ȲZ̄ : 고정, Zθ : 회전, X̄ȲZθ : 기울어진 평면
-            
-            
             | X̄ȲZ̄ | 평지 도로 |
-            | --- | --- |
             | X̄ȲZθ | 언덕 도로 |
             | XYZ | 복잡 지형 (계단) |
     - 논문에서 가상 환경 실험 (virtual environment experiment)
