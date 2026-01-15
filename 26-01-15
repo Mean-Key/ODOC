@@ -1,0 +1,28 @@
+- Urban Camera Network Calibration with Satellite Images 논문
+    - 주요 단어
+        - Camera Calibratio : 카메라 보정
+        - CCTV 네트워크
+        - Urban Surveillance : 도시 감시
+        - Satellite Imagery : 위성 이미지
+        - Bundle Adjustment : 번들 조정
+        - Projection Models : 투영 모델
+        - Traffic Management Systems : 교통 관리 시스템
+        - Automation in Calibration : 캘리브레이션의 자동화
+        - 멀티 카메라 시스템
+    - 사용 지표 : RMSE_T (훈련), RMSE_V (검증), O (과적합 점수), S (선택 지표)
+        - RSME가 낮을수록 오차의 분포가 더 균일함을 의미
+        - 카메라 모델 : PP,PF,PE,EP,EF,S…
+        - XYZ : 3차원 자유 변수, X̄ȲZ̄ : 고정, Zθ : 회전, X̄ȲZθ : 기울어진 평면
+            
+            
+            | X̄ȲZ̄ | 평지 도로 |
+            | --- | --- |
+            | X̄ȲZθ | 언덕 도로 |
+            | XYZ | 복잡 지형 (계단) |
+    - 논문에서 가상 환경 실험 (virtual environment experiment)
+        - Case 1 - 평지 : X̄ȲZ̄, 모든 마커가 Z = 0, 지형이 단순할 때는 복잡한 모델을 쓰면 안 된다
+        - Case 2 - 언덕 : X̄ȲZθ, 높이가 연속적으로 변함
+        - Case 3 - 계단 : X̄ȲZ̄, 높이가 불연속적으로 변화, 단일 평면 불가능, discontinuity 존재
+    - 교차 검증(cross-validation) 및 모델 선택 지표의 활용: 카메라 모델과 지형 모델의 과적합(overfitting)을 방지하기 위해 교차 검증을 사용
+    - 지형 복잡도 ↑ → 모델 자유도 ↑ 필요 → 하지만 자유도가 너무 크면 과적합 발생할 수 있음
+    - BIC(베이지안 정보 기준)는 항상 Ground Truth (정답값)를 고르지 않을 수도 있음 → 그래서  가장 그럴듯한 모델을 선택
